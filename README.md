@@ -1,2 +1,2 @@
 # Linked-list
-This repository contains solutions to Linked List problems focusing on efficient traversal, insertion, deletion, and pointer manipulation
+Practiced and solved Linked List problems on LeetCode, covering traversal, insertion, deletion, and pointer-based problem-solving techniques.
