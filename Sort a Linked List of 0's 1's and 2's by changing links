@@ -1,0 +1,38 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class single:
+    def __init__(self):
+        self.head=None
+    def zero_one_two(self):
+        if self.head is None:
+            print("empty linked list")
+        else:
+            zero=Node(0)
+            zero_end=zero
+            one=Node(0)
+            one_end=one
+            two=Node(0)
+            two_end=two
+            temp=self.head
+            while temp:
+                if temp.data==0:
+                    zero_end.next=temp
+                    zero_end=temp
+                elif temp.data==1:
+                    one_end.next=temp
+                    one_end=temp
+                else:
+                    two_end.next=temp
+                    two_end=temp
+                temp=temp.next
+            zero_end.next=one.next
+            one_end.next=two.next
+            two_end.next=None
+            self.head=zero.next
+            temp=self.head
+            while temp.next:
+                print(temp.data,end="->")
+                temp=temp.next
+            print(temp.data)
