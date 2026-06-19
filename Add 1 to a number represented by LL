@@ -1,0 +1,30 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class single:
+    def __init__(self):
+        self.head=None
+    def add_one(self):
+        if self.head is None:
+            print("empty linked list")
+        else:
+            node=self.head
+            carry=0
+            def add(node):
+                if node is None:
+                    return 1
+                carry=add(node.next)
+                total=carry+node.data
+                node.data=total%10
+                return total//10
+            carry=add(self.head)
+            if carry:
+                new=Node(carry)
+                new.next=self.head
+                self.head=new
+            temp=self.head
+            while temp.next:
+                print(temp.data,end="->")
+                temp=temp.next
+            print(temp.data)
